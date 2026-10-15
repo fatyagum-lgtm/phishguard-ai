@@ -1,0 +1,33 @@
+{
+  "name": "phishguard-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "format": "prettier --write src tests *.ts *.json index.html",
+    "format:check": "prettier --check src tests *.ts *.json index.html"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "24.19.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "jsdom": "^29.0.0",
+    "prettier": "3.9.10",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.4"
+  }
+}

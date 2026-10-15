@@ -1,0 +1,10 @@
+From: "security@example.org" <notice@sender.example.test>
+Reply-To: support@reply.example.invalid
+Subject: Urgent account verification - synthetic demo
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Authentication-Results: forged.example.test; spf=pass; dkim=pass; dmarc=pass
+
+<p>Your account will be suspended. Verify your account immediately.</p>
+<p>Never enter a password; this is a harmless synthetic fixture.</p>
+<a href="http://account-verify.example.test/login/secure?user=demo">https://example.org</a>

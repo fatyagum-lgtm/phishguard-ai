@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "kind": "url",
+  "generated_utc": "2026-10-15T22:20:25.212227+00:00",
+  "input": {
+    "original": "https://example.org/articles/security-basics",
+    "normalized": "https://example.org/articles/security-basics",
+    "scheme": "https",
+    "host": "example.org",
+    "domain": "example.org",
+    "subdomain": "",
+    "suffix": "org",
+    "port": null,
+    "path": "/articles/security-basics",
+    "query": "",
+    "fragment": "",
+    "is_ip": false,
+    "userinfo": false,
+    "unicode_input": false
+  },
+  "input_sha256": "1e6636b2264535881b431632319b93d34ba6756341bf28f50e167c084bd0ec0b",
+  "classification": "review_required",
+  "binary_model_label": "phishing",
+  "score": 0.9992258977371842,
+  "threshold": 0.32,
+  "score_meaning": "Calibrated estimate on the evaluation distribution; not universal incident probability.",
+  "model_id": "char_24_C4",
+  "model_version": "1.0.0",
+  "review_reasons": [
+    "No recognized public suffix or reserved example domain; outside validated use."
+  ],
+  "observed_features": {
+    "url_length": 44.0,
+    "host_length": 11.0,
+    "https": 1.0,
+    "ip_host": 0.0,
+    "userinfo": 0.0,
+    "nondefault_port": 0.0,
+    "subdomain_depth": 0.0,
+    "label_count": 2.0,
+    "max_label_length": 7.0,
+    "host_digit_ratio": 0.0,
+    "host_hyphens": 0.0,
+    "host_entropy": 3.2776134368191157,
+    "punycode": 0.0,
+    "path_length": 25.0,
+    "path_segments": 2.0,
+    "query_length": 0.0,
+    "query_parameters": 0.0,
+    "fragment_length": 0.0,
+    "digit_ratio": 0.0,
+    "special_ratio": 0.1590909090909091,
+    "percent_count": 0.0,
+    "at_count": 0.0,
+    "hyphen_count": 1.0,
+    "dot_count": 1.0,
+    "keyword_count": 0.0,
+    "url_entropy": 4.126950016748872
+  },
+  "heuristics": [],
+  "rule_index": 0.0,
+  "explanation": {
+    "method": "exact linear contributions to the uncalibrated log-odds",
+    "additive": true,
+    "baseline": 3.6184359153516357,
+    "total_raw_score": 2.9683282079056656,
+    "items": [
+      {
+        "feature": "/s",
+        "contribution": 0.29263479312137497
+      },
+      {
+        "feature": "/a",
+        "contribution": 0.27086721100026573
+      },
+      {
+        "feature": "/e",
+        "contribution": 0.17604312761986526
+      },
+      {
+        "feature": "s://",
+        "contribution": -0.156473963270203
+      },
+      {
+        "feature": "ps:/",
+        "contribution": -0.156387287198459
+      },
+      {
+        "feature": "s:/",
+        "contribution": -0.156387287198459
+      },
+      {
+        "feature": "ps:",
+        "contribution": -0.15638304512927031
+      },
+      {
+        "feature": "tps:",
+        "contribution": -0.15638304512927031
+      },
+      {
+        "feature": "s:",
+        "contribution": -0.15636950869543154
+      },
+      {
+        "feature": "ttps",
+        "contribution": -0.1555969185047144
+      },
+      {
+        "feature": "tps",
+        "contribution": -0.1555633562440752
+      },
+      {
+        "feature": "ps",
+        "contribution": -0.15283637650465615
+      }
+    ],
+    "note": "Only the 12 largest terms are shown; omitted terms also contribute. Sigmoid calibration is a separate monotonic mapping, not causation."
+  },
+  "analysis_ms": 1.9494599999916318,
+  "limitations": [
+    "No page visit, DNS lookup, reputation check or sender verification occurred.",
+    "False positives and false negatives are possible. HTTPS and unusual names prove neither safety nor phishing.",
+    "The training dataset has strong HTTPS/www formatting bias; high scores may reflect that bias, even on benign-looking inputs."
+  ]
+}

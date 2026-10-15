@@ -1,0 +1,18 @@
+usage: cli.py [-h] [--version] {acquire,research,serve,url,email} ...
+
+PhishGuard AI — local phishing research and investigation
+
+positional arguments:
+  {acquire,research,serve,url,email}
+    acquire             Download the fixed public UCI dataset, not its sample
+                        URLs
+    research            Clean, partition, train and evaluate the verified UCI
+                        dataset
+    serve               Serve the local API and built frontend at
+                        127.0.0.1:8000
+    url                 Analyze a url offline and print JSON
+    email               Analyze a email offline and print JSON
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit

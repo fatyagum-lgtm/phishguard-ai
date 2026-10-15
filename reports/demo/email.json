@@ -1,0 +1,343 @@
+{
+  "subject": "Urgent account verification - synthetic demo",
+  "from": [
+    {
+      "display": "security@example.org",
+      "address": "notice@sender.example.test"
+    }
+  ],
+  "reply_to": [
+    {
+      "display": "",
+      "address": "support@reply.example.invalid"
+    }
+  ],
+  "received": [],
+  "authentication": {
+    "verified": false,
+    "reported_claims": [
+      "forged.example.test; spf=pass; dkim=pass; dmarc=pass"
+    ],
+    "note": "These headers can be forged. SPF, DKIM and DMARC were NOT independently verified."
+  },
+  "body_text": "\nYour account will be suspended. Verify your account immediately.\n\nNever enter a password; this is a harmless synthetic fixture.\nhttps://example.org\n",
+  "body_truncated": false,
+  "attachments": [],
+  "indicators": [
+    {
+      "code": "reply_to_difference",
+      "message": "Reply-To and From use different registrable domains.",
+      "kind": "email_heuristic"
+    },
+    {
+      "code": "display_address_difference",
+      "message": "An email-like display name differs from From address.",
+      "kind": "email_heuristic"
+    },
+    {
+      "code": "urgency",
+      "message": "Urgent or coercive language was observed (English keyword rule).",
+      "kind": "email_heuristic"
+    },
+    {
+      "code": "sensitive_request",
+      "message": "Language referencing credentials or sensitive data was observed.",
+      "kind": "email_heuristic"
+    },
+    {
+      "code": "link_mismatch",
+      "message": "A URL-like link label has a different destination host.",
+      "kind": "email_heuristic"
+    }
+  ],
+  "defects": [],
+  "url_count": 2,
+  "urls_truncated": false,
+  "method": "Deterministic email indicators plus URL-level model inference; no trained email classifier.",
+  "kind": "email",
+  "schema_version": 1,
+  "generated_utc": "2026-10-15T22:20:25.218251+00:00",
+  "bytes": 520,
+  "input_sha256": "cd23e44ace4e949bac97f6bf8fb79f9d2578f0e25de0afb56373dccffe2bf1f6",
+  "url_reports": [
+    {
+      "url": "https://example.org",
+      "analysis": {
+        "schema_version": 1,
+        "kind": "url",
+        "generated_utc": "2026-10-15T22:20:25.217207+00:00",
+        "input": {
+          "original": "https://example.org",
+          "normalized": "https://example.org/",
+          "scheme": "https",
+          "host": "example.org",
+          "domain": "example.org",
+          "subdomain": "",
+          "suffix": "org",
+          "port": null,
+          "path": "/",
+          "query": "",
+          "fragment": "",
+          "is_ip": false,
+          "userinfo": false,
+          "unicode_input": false
+        },
+        "input_sha256": "50d7a905e3046b88638362cc34a31a1ae534766ca55e3aa397951efe653b062b",
+        "classification": "review_required",
+        "binary_model_label": "phishing",
+        "score": 0.9726989588061159,
+        "threshold": 0.32,
+        "score_meaning": "Calibrated estimate on the evaluation distribution; not universal incident probability.",
+        "model_id": "char_24_C4",
+        "model_version": "1.0.0",
+        "review_reasons": [
+          "No recognized public suffix or reserved example domain; outside validated use."
+        ],
+        "observed_features": {
+          "url_length": 20.0,
+          "host_length": 11.0,
+          "https": 1.0,
+          "ip_host": 0.0,
+          "userinfo": 0.0,
+          "nondefault_port": 0.0,
+          "subdomain_depth": 0.0,
+          "label_count": 2.0,
+          "max_label_length": 7.0,
+          "host_digit_ratio": 0.0,
+          "host_hyphens": 0.0,
+          "host_entropy": 3.2776134368191157,
+          "punycode": 0.0,
+          "path_length": 1.0,
+          "path_segments": 0.0,
+          "query_length": 0.0,
+          "query_parameters": 0.0,
+          "fragment_length": 0.0,
+          "digit_ratio": 0.0,
+          "special_ratio": 0.25,
+          "percent_count": 0.0,
+          "at_count": 0.0,
+          "hyphen_count": 0.0,
+          "dot_count": 1.0,
+          "keyword_count": 0.0,
+          "url_entropy": 3.784183719779189
+        },
+        "heuristics": [],
+        "rule_index": 0.0,
+        "explanation": {
+          "method": "exact linear contributions to the uncalibrated log-odds",
+          "additive": true,
+          "baseline": 3.6184359153516357,
+          "total_raw_score": 0.9170682894897371,
+          "items": [
+            {
+              "feature": "/e",
+              "contribution": 0.3135737633448538
+            },
+            {
+              "feature": "s://",
+              "contribution": -0.27871652924771834
+            },
+            {
+              "feature": "ps:/",
+              "contribution": -0.27856213900041826
+            },
+            {
+              "feature": "s:/",
+              "contribution": -0.27856213900041826
+            },
+            {
+              "feature": "ps:",
+              "contribution": -0.27855458288835727
+            },
+            {
+              "feature": "tps:",
+              "contribution": -0.27855458288835727
+            },
+            {
+              "feature": "s:",
+              "contribution": -0.27853047135069897
+            },
+            {
+              "feature": "ttps",
+              "contribution": -0.27715430849275646
+            },
+            {
+              "feature": "tps",
+              "contribution": -0.27709452629894243
+            },
+            {
+              "feature": "ps",
+              "contribution": -0.2722371410035547
+            },
+            {
+              "feature": "//e",
+              "contribution": 0.26074033763603477
+            },
+            {
+              "feature": "://e",
+              "contribution": 0.26074033763603477
+            }
+          ],
+          "note": "Only the 12 largest terms are shown; omitted terms also contribute. Sigmoid calibration is a separate monotonic mapping, not causation."
+        },
+        "analysis_ms": 0.9526970000024448,
+        "limitations": [
+          "No page visit, DNS lookup, reputation check or sender verification occurred.",
+          "False positives and false negatives are possible. HTTPS and unusual names prove neither safety nor phishing.",
+          "The training dataset has strong HTTPS/www formatting bias; high scores may reflect that bias, even on benign-looking inputs."
+        ]
+      },
+      "error": null
+    },
+    {
+      "url": "http://account-verify.example.test/login/secure?user=demo",
+      "analysis": {
+        "schema_version": 1,
+        "kind": "url",
+        "generated_utc": "2026-10-15T22:20:25.218220+00:00",
+        "input": {
+          "original": "http://account-verify.example.test/login/secure?user=demo",
+          "normalized": "http://account-verify.example.test/login/secure?user=demo",
+          "scheme": "http",
+          "host": "account-verify.example.test",
+          "domain": "account-verify.example.test",
+          "subdomain": "account-verify.example",
+          "suffix": "",
+          "port": null,
+          "path": "/login/secure",
+          "query": "user=demo",
+          "fragment": "",
+          "is_ip": false,
+          "userinfo": false,
+          "unicode_input": false
+        },
+        "input_sha256": "22bf89c496a22233e12b81c054156c056154bd88a0c734406e065db79361d7e2",
+        "classification": "review_required",
+        "binary_model_label": "phishing",
+        "score": 0.999999993748512,
+        "threshold": 0.32,
+        "score_meaning": "Calibrated estimate on the evaluation distribution; not universal incident probability.",
+        "model_id": "char_24_C4",
+        "model_version": "1.0.0",
+        "review_reasons": [
+          "No recognized public suffix or reserved example domain; outside validated use."
+        ],
+        "observed_features": {
+          "url_length": 57.0,
+          "host_length": 27.0,
+          "https": 0.0,
+          "ip_host": 0.0,
+          "userinfo": 0.0,
+          "nondefault_port": 0.0,
+          "subdomain_depth": 2.0,
+          "label_count": 3.0,
+          "max_label_length": 14.0,
+          "host_digit_ratio": 0.0,
+          "host_hyphens": 1.0,
+          "host_entropy": 4.060262039120377,
+          "punycode": 0.0,
+          "path_length": 13.0,
+          "path_segments": 2.0,
+          "query_length": 9.0,
+          "query_parameters": 1.0,
+          "fragment_length": 0.0,
+          "digit_ratio": 0.0,
+          "special_ratio": 0.17543859649122806,
+          "percent_count": 0.0,
+          "at_count": 0.0,
+          "hyphen_count": 1.0,
+          "dot_count": 2.0,
+          "keyword_count": 4.0,
+          "url_entropy": 4.405099172318177
+        },
+        "heuristics": [
+          {
+            "code": "unencrypted",
+            "message": "URL uses HTTP rather than HTTPS",
+            "weight": 1,
+            "kind": "heuristic",
+            "limitation": "Not proof of phishing."
+          },
+          {
+            "code": "sensitive_terms",
+            "message": "Multiple account/security terms appear in the URL",
+            "weight": 1,
+            "kind": "heuristic",
+            "limitation": "Not proof of phishing."
+          }
+        ],
+        "rule_index": 0.3333333333333333,
+        "explanation": {
+          "method": "exact linear contributions to the uncalibrated log-odds",
+          "additive": true,
+          "baseline": 3.6184359153516357,
+          "total_raw_score": 9.669376350412808,
+          "items": [
+            {
+              "feature": "p:",
+              "contribution": 0.5226444234317915
+            },
+            {
+              "feature": "p:/",
+              "contribution": 0.5226444234317915
+            },
+            {
+              "feature": "tp:",
+              "contribution": 0.5226444234317915
+            },
+            {
+              "feature": "tp:/",
+              "contribution": 0.5226444234317915
+            },
+            {
+              "feature": "ttp:",
+              "contribution": 0.5226444234317915
+            },
+            {
+              "feature": "p://",
+              "contribution": 0.5226438114761404
+            },
+            {
+              "feature": "/s",
+              "contribution": 0.2516367783443717
+            },
+            {
+              "feature": "/a",
+              "contribution": 0.23291882557164534
+            },
+            {
+              "feature": "/l",
+              "contribution": 0.16417836095659682
+            },
+            {
+              "feature": "//a",
+              "contribution": 0.1626211328847238
+            },
+            {
+              "feature": "://a",
+              "contribution": 0.16234120866691104
+            },
+            {
+              "feature": "n/",
+              "contribution": 0.12523085776439669
+            }
+          ],
+          "note": "Only the 12 largest terms are shown; omitted terms also contribute. Sigmoid calibration is a separate monotonic mapping, not causation."
+        },
+        "analysis_ms": 1.0137769999687407,
+        "limitations": [
+          "No page visit, DNS lookup, reputation check or sender verification occurred.",
+          "False positives and false negatives are possible. HTTPS and unusual names prove neither safety nor phishing.",
+          "The training dataset has strong HTTPS/www formatting bias; high scores may reflect that bias, even on benign-looking inputs."
+        ]
+      },
+      "error": null
+    }
+  ],
+  "classification": "review_required",
+  "limitations": [
+    "Email indicators are deterministic rules, not a trained email classifier.",
+    "No indicators detected does not establish legitimacy. Header claims are unverified.",
+    "Attachments and external resources were not opened; language rules cover English only."
+  ]
+}

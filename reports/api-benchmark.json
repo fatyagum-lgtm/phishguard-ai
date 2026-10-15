@@ -1,0 +1,42 @@
+{
+  "generated_utc": "2026-10-15T17:29:56.506210+00:00",
+  "method": "Warm sequential HTTP requests over loopback; includes response body transfer",
+  "limits": "One shared-container run; not load, cold-start or production-scale testing",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "cpu_count": 9,
+    "libraries": {
+      "fastapi": "0.143.2",
+      "uvicorn": "0.54.0",
+      "httpx": "0.28.1"
+    }
+  },
+  "model_sha256": "17d5e379f46cd3c1376d4460846ac02106ac0ded8e279a8b64d3cd1d2f7cfde8",
+  "measurements": [
+    {
+      "input": "url",
+      "n": 30,
+      "warmups": 3,
+      "mean_ms": 3.5320070666633305,
+      "median_ms": 3.227924499924484,
+      "p95_ms": 5.056580100063002
+    },
+    {
+      "input": "email_text",
+      "n": 30,
+      "warmups": 3,
+      "mean_ms": 6.899922166682397,
+      "median_ms": 6.587963000129093,
+      "p95_ms": 9.264046200053144
+    },
+    {
+      "input": "email_upload",
+      "n": 30,
+      "warmups": 3,
+      "mean_ms": 6.875418966660618,
+      "median_ms": 5.991268499997204,
+      "p95_ms": 9.34968439991053
+    }
+  ]
+}

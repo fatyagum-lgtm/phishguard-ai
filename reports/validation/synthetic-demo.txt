@@ -1,0 +1,5 @@
+url-benign-looking: review_required; model estimate=0.9992258977371842
+url-with-www: review_required; model estimate=0.7258136155209155
+url-suspicious-pattern: review_required; model estimate=0.999999993748512
+email: review_required; model estimate=None
+These fixtures exercise behavior; they do not validate real-world detection.

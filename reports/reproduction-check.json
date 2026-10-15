@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "same_dataset": true,
+  "same_split_manifest": true,
+  "same_selected_model_bytes": true,
+  "model_sha256": [
+    "17d5e379f46cd3c1376d4460846ac02106ac0ded8e279a8b64d3cd1d2f7cfde8",
+    "17d5e379f46cd3c1376d4460846ac02106ac0ded8e279a8b64d3cd1d2f7cfde8"
+  ],
+  "maximum_metric_absolute_difference": 1.1785363285277128e-07,
+  "metric_tolerance": 1e-06,
+  "decision_metrics_identical": true,
+  "strict_1e_minus_10_metric_check_passed": false,
+  "note": "Rank-metric drift retained; forests are not bitwise reproducible.",
+  "excluded": [
+    "wall-clock time",
+    "latency",
+    "generation time",
+    "environment",
+    "post-hoc diagnostics"
+  ]
+}

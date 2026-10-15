@@ -1,0 +1,129 @@
+{
+  "generated_utc": "2026-10-15T22:20:25.415829+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "python-lint",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "python-format",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "python-tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "python-dependencies",
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "frontend-format",
+      "command": [
+        "npm",
+        "run",
+        "format:check"
+      ],
+      "directory": "frontend",
+      "exit_code": 0
+    },
+    {
+      "name": "frontend-tests",
+      "command": [
+        "npm",
+        "run",
+        "test"
+      ],
+      "directory": "frontend",
+      "exit_code": 0
+    },
+    {
+      "name": "frontend-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "directory": "frontend",
+      "exit_code": 0
+    },
+    {
+      "name": "browser-integration",
+      "command": [
+        "npm",
+        "run",
+        "e2e"
+      ],
+      "directory": "frontend",
+      "exit_code": 0
+    },
+    {
+      "name": "research-smoke",
+      "command": [
+        "python",
+        "scripts/smoke_research.py",
+        "--output",
+        "<temporary>/run"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "cli-help",
+      "command": [
+        "python",
+        "-m",
+        "phishguard.cli",
+        "--help"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    },
+    {
+      "name": "synthetic-demo",
+      "command": [
+        "python",
+        "scripts/demo.py"
+      ],
+      "directory": ".",
+      "exit_code": 0
+    }
+  ],
+  "hosted_ci_run": false
+}

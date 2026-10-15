@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77,<86"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phishguard-ai"
+version = "1.0.0"
+description = "Offline URL and email investigation with reproducible phishing ML experiments"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3",
+  "numpy==2.3.5", "pandas==2.2.3", "scikit-learn==1.8.0",
+  "scipy==1.17.0", "tldextract==5.4.0", "idna==3.20",
+  "matplotlib==3.10.8"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+phishguard = "phishguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+

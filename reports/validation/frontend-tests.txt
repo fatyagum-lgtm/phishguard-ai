@@ -1,0 +1,14 @@
+
+> phishguard-ui@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.4 <project>/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  15:20:13
+   Duration  1.01s (environment 60%, tests 27%, setup 8%, transform 3%, import 1%)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

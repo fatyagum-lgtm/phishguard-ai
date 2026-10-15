@@ -1,0 +1,8 @@
+random: fit char_35_C1
+random: fit lexical_forest
+domain_disjoint: fit char_35_C1
+domain_disjoint: fit lexical_forest
+domain_disjoint: ablation forest_no_host
+domain_disjoint: ablation forest_no_https
+Selected lexical_forest; results: <temporary>/run/research.json
+Synthetic pipeline smoke passed; these scores are not research benchmarks.

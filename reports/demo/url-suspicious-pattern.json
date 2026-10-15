@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "kind": "url",
+  "generated_utc": "2026-10-15T22:20:25.214231+00:00",
+  "input": {
+    "original": "http://account-verify.example.test/login/secure?user=demo",
+    "normalized": "http://account-verify.example.test/login/secure?user=demo",
+    "scheme": "http",
+    "host": "account-verify.example.test",
+    "domain": "account-verify.example.test",
+    "subdomain": "account-verify.example",
+    "suffix": "",
+    "port": null,
+    "path": "/login/secure",
+    "query": "user=demo",
+    "fragment": "",
+    "is_ip": false,
+    "userinfo": false,
+    "unicode_input": false
+  },
+  "input_sha256": "22bf89c496a22233e12b81c054156c056154bd88a0c734406e065db79361d7e2",
+  "classification": "review_required",
+  "binary_model_label": "phishing",
+  "score": 0.999999993748512,
+  "threshold": 0.32,
+  "score_meaning": "Calibrated estimate on the evaluation distribution; not universal incident probability.",
+  "model_id": "char_24_C4",
+  "model_version": "1.0.0",
+  "review_reasons": [
+    "No recognized public suffix or reserved example domain; outside validated use."
+  ],
+  "observed_features": {
+    "url_length": 57.0,
+    "host_length": 27.0,
+    "https": 0.0,
+    "ip_host": 0.0,
+    "userinfo": 0.0,
+    "nondefault_port": 0.0,
+    "subdomain_depth": 2.0,
+    "label_count": 3.0,
+    "max_label_length": 14.0,
+    "host_digit_ratio": 0.0,
+    "host_hyphens": 1.0,
+    "host_entropy": 4.060262039120377,
+    "punycode": 0.0,
+    "path_length": 13.0,
+    "path_segments": 2.0,
+    "query_length": 9.0,
+    "query_parameters": 1.0,
+    "fragment_length": 0.0,
+    "digit_ratio": 0.0,
+    "special_ratio": 0.17543859649122806,
+    "percent_count": 0.0,
+    "at_count": 0.0,
+    "hyphen_count": 1.0,
+    "dot_count": 2.0,
+    "keyword_count": 4.0,
+    "url_entropy": 4.405099172318177
+  },
+  "heuristics": [
+    {
+      "code": "unencrypted",
+      "message": "URL uses HTTP rather than HTTPS",
+      "weight": 1,
+      "kind": "heuristic",
+      "limitation": "Not proof of phishing."
+    },
+    {
+      "code": "sensitive_terms",
+      "message": "Multiple account/security terms appear in the URL",
+      "weight": 1,
+      "kind": "heuristic",
+      "limitation": "Not proof of phishing."
+    }
+  ],
+  "rule_index": 0.3333333333333333,
+  "explanation": {
+    "method": "exact linear contributions to the uncalibrated log-odds",
+    "additive": true,
+    "baseline": 3.6184359153516357,
+    "total_raw_score": 9.669376350412808,
+    "items": [
+      {
+        "feature": "p:",
+        "contribution": 0.5226444234317915
+      },
+      {
+        "feature": "p:/",
+        "contribution": 0.5226444234317915
+      },
+      {
+        "feature": "tp:",
+        "contribution": 0.5226444234317915
+      },
+      {
+        "feature": "tp:/",
+        "contribution": 0.5226444234317915
+      },
+      {
+        "feature": "ttp:",
+        "contribution": 0.5226444234317915
+      },
+      {
+        "feature": "p://",
+        "contribution": 0.5226438114761404
+      },
+      {
+        "feature": "/s",
+        "contribution": 0.2516367783443717
+      },
+      {
+        "feature": "/a",
+        "contribution": 0.23291882557164534
+      },
+      {
+        "feature": "/l",
+        "contribution": 0.16417836095659682
+      },
+      {
+        "feature": "//a",
+        "contribution": 0.1626211328847238
+      },
+      {
+        "feature": "://a",
+        "contribution": 0.16234120866691104
+      },
+      {
+        "feature": "n/",
+        "contribution": 0.12523085776439669
+      }
+    ],
+    "note": "Only the 12 largest terms are shown; omitted terms also contribute. Sigmoid calibration is a separate monotonic mapping, not causation."
+  },
+  "analysis_ms": 1.0036529999979393,
+  "limitations": [
+    "No page visit, DNS lookup, reputation check or sender verification occurred.",
+    "False positives and false negatives are possible. HTTPS and unusual names prove neither safety nor phishing.",
+    "The training dataset has strong HTTPS/www formatting bias; high scores may reflect that bias, even on benign-looking inputs."
+  ]
+}

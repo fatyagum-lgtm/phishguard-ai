@@ -1,0 +1,35 @@
+{
+  "generated_utc": "2026-10-15T22:23:39.543145+00:00",
+  "passed": true,
+  "scope": "Fresh extraction of the release ZIP; fresh project-local Node install; existing isolated Python dependencies with extracted src on PYTHONPATH",
+  "checks": [
+    {
+      "command": "npm ci --prefix frontend",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run build --prefix frontend",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/demo.py --output EXTERNAL_DEMO_DIR",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m phishguard.cli --help",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run e2e --prefix frontend",
+      "exit_code": 0,
+      "result": "1 browser workflow passed with real local API"
+    }
+  ],
+  "excluded_from_zip": [
+    "raw dataset",
+    "virtual environments",
+    "node_modules",
+    "build output",
+    "temporary runs"
+  ]
+}
