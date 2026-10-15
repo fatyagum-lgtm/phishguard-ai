@@ -181,24 +181,6 @@ No coverage percentage is claimed.
 [research](docs/screenshots/research.png), [mobile](docs/screenshots/mobile.png).
 These are browser captures of this application, not generated mockups.
 
-## Safety, limitations and next work
+Source code: MIT License. Dataset attribution: CC BY 4.0. See [LICENSE](LICENSE) for details.
 
-Local single-user deployment only. No URL retrieval, DNS lookup, external AI API,
-active email HTML, attachment execution, authenticated-sender verification or
-server-side investigation history. JSON exports can contain private input: review
-before sharing. Inputs and model resources are bounded; see
-[threat model](docs/threat-model.md) and [SECURITY.md](SECURITY.md).
-
-Calibration is specific to the dataset. The review band is a heuristic, not a
-validated out-of-distribution detector. No temporal/external-dataset validation,
-campaign-disjoint guarantee, email classifier, malware scanner, or certified
-forensic chain of custody is provided. See [limitations](docs/limitations.md).
-
-Next research: independently sourced temporally separated data; campaign-aware
-splits; multiple seeds; de-biased training; operating thresholds with explicit
-analyst costs; separately labeled email evaluation. These are future work.
-Docker deployment and multi-user hosting are outside this release.
-
-Source code: MIT. Dataset attribution: CC BY 4.0. See [LICENSE](LICENSE).
-Publication steps are in [docs/publication.md](docs/publication.md); no remote,
-commit or push has been created automatically.
+For reproducibility, see the [technical report](technical-report.md), [validation results](validation.md), and [research limitations](limitations.md). Automated checks are available under GitHub Actions.
