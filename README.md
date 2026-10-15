@@ -1,4 +1,3 @@
-[PhishGuard_AI_README_corrected.md](https://github.com/user-attachments/files/33518318/PhishGuard_AI_README_corrected.md)
 # PhishGuard AI
 
 **Explainable Phishing Detection & Adversarial Robustness Research Platform**
